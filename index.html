@@ -6,57 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Visit to my personal website.">
     <meta name="author" content="Achal Jaiswal">
-    <title>Achal Jaiswal</title>
+    <title>AchalJaiswal</title>
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
     <link rel="stylesheet" href="assets/css/meyawo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/animate.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        @media (max-width: 768px) {
+            .service-card,
+            .portfolio-card {
+                margin-bottom: 30px; /* Add some space between cards */
+            }
+
+            .col-md-6 {
+                flex: 0 0 50%; /* Two elements per row */
+                max-width: 50%;
+            }
         }
 
-        /* Sliding animation */
-        .slide-in {
-            opacity: 0;
-            transform: translateX(-100%); /* Start from the left */
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-        }
-
-        .slide-in.visible {
-            opacity: 1;
-            transform: translateX(0); /* Slide into place */
-        }
-
-        /* Other styles */
         .section {
-            padding: 60px 0;
+            opacity: 0; /* Initially hidden */
+            transform: translateY(20px); /* Start slightly below */
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transition for smooth effect */
         }
 
-        .header {
-            background: #f8f9fa;
-            padding: 100px 0;
-            text-align: center;
-        }
-
-        .header-title {
-            font-size: 2.5rem;
-        }
-
-        .header-subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-
-        .btn-primary {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-
-        .btn-primary:hover {
-            background-color: #0056b3;
+        .section.visible {
+            opacity: 1; /* Fully visible */
+            transform: translateY(0); /* Move to original position */
         }
     </style>
 </head>
@@ -71,21 +46,27 @@
                 <li class="item"><a class="link nav-link" href="#home">Home</a></li>
                 <li class="item"><a class="link nav-link" href="#about">About</a></li>
                 <li class="item"><a class="link nav-link" href="#portfolio">Projects</a></li>
-                <li class="item"><a class="link nav-link" href="#testmonial">Testimonial</a></li>
+                <li class="item"><a class="link nav-link" href="#testmonial">Testmonial</a></li>
                 <li class="item"><a class="link nav-link" href="#blog">Papers</a></li>
                 <li class="item"><a class="link nav-link" href="#contact">Contact</a></li>
             </ul>
+            <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
+                <div class="hamburger-box">
+                    <div class="hamburger-inner"></div>
+                </div>
+            </a>
         </div>
     </nav><!-- End of Page Navbar -->
 
     <!-- page header -->
     <header id="home" class="header">
+        <div class="overlay"></div>
         <div class="header-content container">
             <h1 class="header-title">
                 <span class="up">HI!</span>
                 <span class="down">I am Achal Jaiswal </span>
             </h1>
-            <p class="header-subtitle">Android Developer | Freelancer</p>
+            <p class="header-subtitle">Android Developer|Freelancer</p>
             <form action="#portfolio">
                 <button class="btn btn-primary">Visit My Works</button>
             </form>
@@ -93,25 +74,33 @@
     </header><!-- end of page header -->
 
     <!-- about section -->
-    <section class="section slide-in" id="about">
+    <section class="section pt-0" id="about">
         <div class="container text-center">
-            <h2 class="section-title mb-3">About Me</h2>
-            <p>
-                Ever since I laid my hands on my first Android device, I've been captivated by the endless possibilities of the platform. My journey from avid user to skilled developer has been driven by an unwavering passion for creating exceptional Android experiences.
-                <br><br>I'm a B.Tech. CSE student at Shri Ramswaroop Memorial University with a passion for building innovative Android apps. Through a number of projects (details in my resume), I've honed my skills in Java, Kotlin, Object-Oriented Programming (OOP) concepts, Android SDKs, UI/UX, Firebase, and Rest APIs.
-            </p>
-            <a href="https://drive.google.com/file/d/1AUZ_KnmKSWnLeM13oCt7rhxFMWzi-FjZ/view?usp=sharing" class="btn btn-primary mt-4">Download CV</a>
+            <div class="about">
+                <div class="about-img-holder">
+                    <img src="assets/imgs/profile-pic (1).png" class="about-img" alt="Profile Picture">
+                </div>
+                <div class="about-caption">
+                    <p class="section-subtitle">Who Am I ?</p>
+                    <h2 class="section-title mb-3">About Me</h2>
+                    <p>
+                        Ever since I laid my hands on my first Android device, I've been captivated by the endless possibilities of the platform. My journey from avid user to skilled developer has been driven by an unwavering passion for creating exceptional Android experiences.
+                        <br><br>I'm a B.Tech. CSE student at Shri Ramswaroop Memorial University with a passion for building innovative Android apps. Through a number of projects (details in my resume), I've honed my skills in Java, Kotlin, Oriented Programming (OOP) concepts, Android SDKs, UI/UX, Firebase, and Rest APIs.
+                    </p>
+                    <a href="https://drive.google.com/file/d/1AUZ_KnmKSWnLeM13oCt7rhxFMWzi-FjZ/view?usp=sharing" class="btn-rounded btn btn-outline-primary mt-4">Download CV</a>
+                </div>
+            </div>
         </div>
     </section> <!-- end of about section -->
 
     <!-- service section -->
-    <section class="section slide-in" id="service">
+    <section class="section" id="service">
         <div class="container text-center">
-            <p class="section-subtitle">What I Do?</p>
+            <p class="section-subtitle">What I Do ?</p>
             <h6 class="section-title mb-6">My Skills</h6>
             <div class="row">
                 <div class="col-md-6 col-lg-3">
-                    <div class="service-card">
+                    <div class="service-card wow fadeInUp" data-wow-delay="0.1s">
                         <div class="body">
                             <img src="assets/imgs/education.svg" class="icon">
                             <h6 class="title">Android Development</h6>
@@ -120,7 +109,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
-                    <div class="service-card">
+                    <div class="service-card wow fadeInUp" data-wow-delay="0.2s">
                         <div class="body">
                             <img src="assets/imgs/toolbox.svg" class="icon">
                             <h6 class="title">UI/UX Design</h6>
@@ -129,7 +118,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
-                    <div class="service-card">
+                    <div class="service-card wow fadeInUp" data-wow-delay="0.3s">
                         <div class="body">
                             <img src="assets/imgs/analytics.svg" class="icon">
                             <h6 class="title">Problem-Solving</h6>
@@ -138,7 +127,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
-                    <div class="service-card">
+                    <div class="service-card wow fadeInUp" data-wow-delay="0.4s">
                         <div class="body">
                             <img src="assets/imgs/responsive.svg" class="icon">
                             <h6 class="title">Teamwork and Collaboration</h6>
@@ -151,12 +140,12 @@
     </section><!-- end of service section -->
 
     <!-- portfolio section -->
-    <section class="section slide-in" id="portfolio">
+    <section class="section" id="portfolio">
         <div class="container text-center">
-            <p class="section-subtitle">What I Did?</p>
+            <p class="section-subtitle">What I Did ?</p>
             <h6 class="section-title mb-6">Projects</h6>
             <div class="row">
-                <div class="col-md-6 col-lg-4 mb-4">
+                <div class="col-md-6 col-lg-4 mb-4 wow fadeInUp" data-wow-delay="0.1s">
                     <a href="https://github.com/Achaljs/DevConnect" class="portfolio-card">
                         <img src="assets/imgs/devC.png" class="portfolio-card-img img-fluid rounded shadow-lg">
                         <span class="portfolio-card-overlay">
@@ -167,7 +156,7 @@
                         </span>
                     </a>
                 </div>
-                <div class="col-md-6 col-lg-4 mb-4">
+                <div class="col-md-6 col-lg-4 mb-4 wow fadeInUp" data-wow-delay="0.2s">
                     <a href="https://github.com/Achaljs/AskMe" class="portfolio-card">
                         <img class="portfolio-card-img img-fluid rounded shadow-lg" src="assets/imgs/chat.png">
                         <span class="portfolio-card-overlay">
@@ -178,7 +167,7 @@
                         </span>
                     </a>
                 </div>
-                <div class="col-md-6 col-lg-4 mb-4">
+                <div class="col-md-6 col-lg-4 mb-4 wow fadeInUp" data-wow-delay="0.3s">
                     <a href="https://github.com/Achaljs/MyWallpapers" class="portfolio-card">
                         <img class="portfolio-card-img img-fluid rounded shadow-lg" src="assets/imgs/wallpaper.png">
                         <span class="portfolio-card-overlay">
@@ -189,7 +178,7 @@
                         </span>
                     </a>
                 </div>
-                <div class="col-md-6 col-lg-4 mb-4">
+                <div class="col-md-6 col-lg-4 mb-4 wow fadeInUp" data-wow-delay="0.4s">
                     <a href="https://github.com/Achaljs/PujanMart" class="portfolio-card">
                         <img class="portfolio-card-img img-fluid rounded shadow-lg" src="assets/imgs/pujanmart.png">
                         <span class="portfolio-card-overlay">
@@ -204,10 +193,16 @@
         </div><!-- end of container -->
     </section>
 
+    <!-- Add Wow.js for smooth animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+
     <!-- pricing section -->
-    <section class="section slide-in" id="pricing">
+    <section class="section" id="pricing">
         <div class="container text-center">
-            <p class="section-subtitle">How Much I Charge?</p>
+            <p class="section-subtitle">How Much I Charge ?</p>
             <h6 class="section-title mb-6">My Background</h6>
             <div class="pricing-wrapper">
                 <div class="pricing-card">
@@ -228,7 +223,9 @@
                         <img class="pricing-card-icon" src="assets/imgs/shipped.svg">
                     </div>
                     <div class="pricing-card-body">
-                        <a href="#"><h6 class="pricing-card-title">Accenture North America</h6></a>
+                        <a href="#">
+                            <h6 class="pricing-card-title">Accenture North America</h6>
+                        </a>
                         <div class="pricing-card-list">
                             <p>Completed a job simulation where I supported a client with a small development team overwhelmed by the growth of their code base.</p>
                             <p>January 2024</p>
@@ -252,7 +249,7 @@
     </section><!-- end of pricing section -->
 
     <!-- section -->
-    <section class="section-sm bg-primary slide-in">
+    <section class="section-sm bg-primary">
         <div class="container text-center text-sm-left">
             <div class="row align-items-center">
                 <div class="col-sm offset-md-1 mb-4 mb-md-0">
@@ -267,10 +264,10 @@
     </section> <!-- end of section -->
 
     <!-- testimonial section -->
-    <section class="section slide-in" id="testmonial">
+    <section class="section" id="testmonial">
         <div class="container text-center">
-            <p class="section-subtitle">What Clients Think About Me?</p>
-            <h6 class="section-title mb-6">Testimonial</h6>
+            <p class="section-subtitle">What Client Think About Me ?</p>
+            <h6 class="section-title mb-6">Testmonial</h6>
             <div class="row">
                 <div class="col-md-10">
                     <div class="testimonial-card">
@@ -279,7 +276,7 @@
                         </div>
                         <div class="testimonial-card-body">
                             <p class="testimonial-card-subtitle">Working with Achal has been a fantastic experience. He is responsive, collaborative, and always goes the extra mile to ensure our project's success. I highly recommend him to any business looking to build an Android app.</p>
-                            <h6 class="testimonial-card-title">Yash Verma, Founder of Impeal Corp.</h6>
+                            <h6 class="testimonial-card-title">Yash Verma, Founder of Impeal corp.</h6>
                         </div>
                     </div>
                 </div>
@@ -288,7 +285,7 @@
     </section> <!-- end of testimonial section -->
 
     <!-- blog section -->
-    <section class="section slide-in" id="blog">
+    <section class="section" id="blog">
         <div class="container text-center">
             <p class="section-subtitle">Recent Posts?</p>
             <h6 class="section-title mb-6">Reports</h6>
@@ -326,7 +323,7 @@
     </section><!-- end of blog section -->
 
     <!-- contact section -->
-    <section class="section slide-in" id="contact">
+    <section class="section" id="contact">
         <div class="container text-center">
             <p class="section-subtitle">How can you communicate?</p>
             <h6 class="section-title mb-5">Contact Me</h6>
@@ -371,32 +368,34 @@
                 }, 800);
                 event.preventDefault();
             });
-        });
-    </script>
 
-    <!-- Intersection Observer for sliding animation -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const sections = document.querySelectorAll('.slide-in');
+            // Function to check if an element is in the viewport
+            function isElementInViewport(el) {
+                var rect = el.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
 
-            const options = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
+            // Function to add the visible class to sections
+            function checkVisibility() {
+                $('.section').each(function() {
+                    if (isElementInViewport(this)) {
+                        $(this).addClass('visible');
                     }
                 });
-            }, options);
+            }
 
-            sections.forEach(section => {
-                observer.observe(section);
+            // Check visibility on scroll
+            $(window).on('scroll', function() {
+                checkVisibility();
             });
+
+            // Initial check
+            checkVisibility();
         });
     </script>
 
