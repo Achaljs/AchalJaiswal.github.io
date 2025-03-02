@@ -16,31 +16,10 @@
             .portfolio-card {
                 margin-bottom: 30px; /* Add some space between cards */
             }
-
             .col-md-6 {
                 flex: 0 0 50%; /* Two elements per row */
                 max-width: 50%;
             }
-        }
-
-        .section {
-            opacity: 0; /* Initially hidden */
-            transform: translateX(-100%); /* Start from the left */
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transition for smooth effect */
-        }
-
-        .section.visible {
-            opacity: 1; /* Fully visible */
-            transform: translateX(0); /* Move to original position */
-        }
-
-        /* For sections that slide in from the right */
-        .section.right {
-            transform: translateX(100%); /* Start from the right */
-        }
-
-        .section.right.visible {
-            transform: translateX(0); /* Move to original position */
         }
     </style>
 </head>
@@ -232,9 +211,7 @@
                         <img class="pricing-card-icon" src="assets/imgs/shipped.svg">
                     </div>
                     <div class="pricing-card-body">
-                        <a href="#">
-                            <h6 class="pricing-card-title">Accenture North America</h6>
-                        </a>
+                        <a href="#"><h6 class="pricing-card-title">Accenture North America</h6></a>
                         <div class="pricing-card-list">
                             <p>Completed a job simulation where I supported a client with a small development team overwhelmed by the growth of their code base.</p>
                             <p>January 2024</p>
@@ -377,34 +354,6 @@
                 }, 800);
                 event.preventDefault();
             });
-
-            // Function to check if an element is in the viewport
-            function isElementInViewport(el) {
-                var rect = el.getBoundingClientRect();
-                return (
-                    rect.top >= 0 &&
-                    rect.left >= 0 &&
-                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-                );
-            }
-
-            // Function to add the visible class to sections
-            function checkVisibility() {
-                $('.section').each(function() {
-                    if (isElementInViewport(this)) {
-                        $(this).addClass('visible');
-                    }
-                });
-            }
-
-            // Check visibility on scroll
-            $(window).on('scroll', function() {
-                checkVisibility();
-            });
-
-            // Initial check
-            checkVisibility();
         });
     </script>
 
