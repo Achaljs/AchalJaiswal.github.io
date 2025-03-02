@@ -22,6 +22,18 @@
                 max-width: 50%;
             }
         }
+
+        /* Sliding animation */
+        .slide-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        .slide-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 
@@ -63,7 +75,7 @@
     </header><!-- end of page header -->
 
     <!-- about section -->
-    <section class="section pt-0" id="about">
+    <section class="section pt-0 slide-in" id="about">
         <div class="container text-center">
             <div class="about">
                 <div class="about-img-holder">
@@ -83,7 +95,7 @@
     </section> <!-- end of about section -->
 
     <!-- service section -->
-    <section class="section" id="service">
+    <section class="section slide-in" id="service">
         <div class="container text-center">
             <p class="section-subtitle">What I Do?</p>
             <h6 class="section-title mb-6">My Skills</h6>
@@ -129,7 +141,7 @@
     </section><!-- end of service section -->
 
     <!-- portfolio section -->
-    <section class="section" id="portfolio">
+    <section class="section slide-in" id="portfolio">
         <div class="container text-center">
             <p class="section-subtitle">What I Did?</p>
             <h6 class="section-title mb-6">Projects</h6>
@@ -141,8 +153,6 @@
                             <span class="portfolio-card-caption">
                                 <h4>DevConnect</h4>
                                 <p class="font-weight-normal">Android App</p>
-                                <p>Technologies: Java, Firebase, Android SDK</p>
-                                <p>Challenge: Implementing real-time chat functionality.</p>
                             </span>
                         </span>
                     </a>
@@ -154,8 +164,6 @@
                             <span class="portfolio-card-caption">
                                 <h4>Ask Me</h4>
                                 <p class="font-weight-normal">Android App</p>
-                                <p>Technologies: Kotlin, Retrofit, Room</p>
-                                <p>Challenge: Creating a user-friendly Q&A platform.</p>
                             </span>
                         </span>
                     </a>
@@ -167,8 +175,6 @@
                             <span class="portfolio-card-caption">
                                 <h4>MyWallpapers</h4>
                                 <p class="font-weight-normal">Android App</p>
-                                <p>Technologies: Java, Glide, API Integration</p>
-                                <p>Challenge: Implementing a wallpaper gallery with dynamic updates.</p>
                             </span>
                         </span>
                     </a>
@@ -180,8 +186,6 @@
                             <span class="portfolio-card-caption">
                                 <h4>PujanMart</h4>
                                 <p class="font-weight-normal">Android App for Pooja Booking & Items</p>
-                                <p>Technologies: Kotlin, Firebase, Google Maps API</p>
-                                <p>Challenge: Integrating location services for booking.</p>
                             </span>
                         </span>
                     </a>
@@ -190,45 +194,73 @@
         </div><!-- end of container -->
     </section>
 
-    <!-- skills section -->
-    <section class="section" id="skills">
+    <!-- pricing section -->
+    <section class="section slide-in" id="pricing">
         <div class="container text-center">
-            <p class="section-subtitle">My Skills</p>
-            <h6 class="section-title mb-6">Technical Proficiencies</h6>
-            <div class="row">
-                <div class="col-md-6">
-                    <h6>Java</h6>
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 90%;">90%</div>
+            <p class="section-subtitle">How Much I Charge?</p>
+            <h6 class="section-title mb-6">My Background</h6>
+            <div class="pricing-wrapper">
+                <div class="pricing-card">
+                    <div class="pricing-card-header">
+                        <img class="pricing-card-icon" src="assets/imgs/education.svg">
+                    </div>
+                    <div class="pricing-card-body">
+                        <h6 class="pricing-card-title">Education</h6>
+                        <div class="pricing-card-list">
+                            <p>B.Tech in Computer Science</p>
+                            <p>Shri Ramswaroop Memorial University</p>
+                            <p>2021 - 2025</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <h6>Kotlin</h6>
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 85%;">85%</div>
+                <div class="pricing-card">
+                    <div class="pricing-card-header">
+                        <img class="pricing-card-icon" src="assets/imgs/shipped.svg">
+                    </div>
+                    <div class="pricing-card-body">
+                        <a href="#"><h6 class="pricing-card-title">Accenture North America</h6></a>
+                        <div class="pricing-card-list">
+                            <p>Completed a job simulation where I supported a client with a small development team overwhelmed by the growth of their code base.</p>
+                            <p>January 2024</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <h6>UI/UX Design</h6>
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 80%;">80%</div>
+                <div class="pricing-card">
+                    <div class="pricing-card-header">
+                        <img class="pricing-card-icon" src="assets/imgs/shipped.svg">
+                    </div>
+                    <div class="pricing-card-body">
+                        <h6 class="pricing-card-title">Google Cloud Ready Facilitator</h6>
+                        <div class="pricing-card-list">
+                            <p>Participated in the Google Cloud Ready Facilitator Program 2022, gaining practical skills in deploying applications and leveraging Google Cloud Platform (GCP).</p>
+                            <p>Completed 60 Quests and Gained 30 Skill badges.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <h6>Firebase</h6>
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 75%;">75%</div>
-                    </div>
+            </div><!-- end of pricing wrapper -->
+        </div> <!-- end of container -->
+    </section><!-- end of pricing section -->
+
+    <!-- section -->
+    <section class="section-sm bg-primary slide-in">
+        <div class="container text-center text-sm-left">
+            <div class="row align-items-center">
+                <div class="col-sm offset-md-1 mb-4 mb-md-0">
+                    <h6 class="title text-light">Want to work with me?</h6>
+                    <p class="m-0 text-light">Always feel Free to Contact & Hire me</p>
                 </div>
-            </div>
-        </div>
-    </section>
+                <div class="col-sm offset-sm-2 offset-md-3">
+                    <a href="https://linkedin.com/in/achal-jaiswal-3922111a0/message/" class="btn btn-lg my-font btn-light rounded">Message Me on LinkedIn</a>
+                </div>
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </section> <!-- end of section -->
 
     <!-- testimonial section -->
-    <section class="section" id="testmonial">
+    <section class="section slide-in" id="testmonial">
         <div class="container text-center">
             <p class="section-subtitle">What Clients Think About Me?</p>
-            <h6 class="section-title mb-6">Testimonials</h6>
+            <h6 class="section-title mb-6">Testimonial</h6>
             <div class="row">
                 <div class="col-md-10">
                     <div class="testimonial-card">
@@ -241,23 +273,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-10">
-                    <div class="testimonial-card">
-                        <div class="testimonial-card-img-holder">
-                            <img src="assets/imgs/avatar2.jpeg" class="testimonial-card-img" alt="Client Testimonial">
-                        </div>
-                        <div class="testimonial-card-body">
-                            <p class="testimonial-card-subtitle">Achal's attention to detail and commitment to quality is unmatched. He delivered our project ahead of schedule!</p>
-                            <h6 class="testimonial-card-title">Priya Sharma, Project Manager at Tech Solutions</h6>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div> <!-- end of container -->
     </section> <!-- end of testimonial section -->
 
     <!-- blog section -->
-    <section class="section" id="blog">
+    <section class="section slide-in" id="blog">
         <div class="container text-center">
             <p class="section-subtitle">Recent Posts?</p>
             <h6 class="section-title mb-6">Reports</h6>
@@ -291,25 +312,11 @@
                 </div>
             </div><!-- end of blog wrapper -->
 
-            <div class="blog-card">
-                <div class="blog-card-header">
-                    <img src="assets/imgs/img-3.jpg" class="blog-card-img" alt="Blog Post">
-                </div>
-                <div class="blog-card-body">
-                    <h5 class="blog-card-title">Understanding the Basics of Android Development</h5>
-                    <p class="blog-card-caption">
-                        <a href="#">By: Achal Jaiswal</a>
-                    </p>
-                    <p>This post covers the fundamental concepts of Android development, including the architecture, components, and best practices for building robust applications.</p>
-                    <a href="#" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
-                </div>
-            </div><!-- end of blog wrapper -->
-
         </div><!-- end of container -->
     </section><!-- end of blog section -->
 
     <!-- contact section -->
-    <section class="section" id="contact">
+    <section class="section slide-in" id="contact">
         <div class="container text-center">
             <p class="section-subtitle">How can you communicate?</p>
             <h6 class="section-title mb-5">Contact Me</h6>
@@ -343,22 +350,42 @@
     <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
     <script src="assets/js/meyawo.js"></script>
 
-    <!-- Add Wow.js for smooth animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script>
-        new WOW().init();
-    </script>
-
     <!-- Smooth Scrolling Script -->
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             // Smooth scrolling for menu items
-            $('.nav-link').on('click', function (event) {
+            $('.nav-link').on('click', function(event) {
                 var target = $(this).attr('href');
                 $('html, body').animate({
                     scrollTop: $(target).offset().top
                 }, 800);
                 event.preventDefault();
+            });
+        });
+    </script>
+
+    <!-- Intersection Observer for sliding animation -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll('.slide-in');
+
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, options);
+
+            sections.forEach(section => {
+                observer.observe(section);
             });
         });
     </script>
