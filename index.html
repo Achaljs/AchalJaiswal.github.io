@@ -6,16 +6,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Visit to my personal website.">
     <meta name="author" content="Achal Jaiswal">
-    <title>AchalJaiswal</title>
+    <title>Achal Jaiswal</title>
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
     <link rel="stylesheet" href="assets/css/meyawo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
     <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #ecf0f1;
+            color: #2c3e50;
+        }
+
+        .navbar {
+            background-color: #3498db;
+        }
+
+        .navbar .nav-link {
+            color: white;
+        }
+
+        .header {
+            background: linear-gradient(rgba(52, 152, 219, 0.8), rgba(52, 152, 219, 0.8)), url('assets/imgs/header-bg.jpg') no-repeat center center/cover;
+            color: white;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn-primary {
+            background-color: #2ecc71;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #27ae60;
+        }
+
+        .service-card, .portfolio-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover, .portfolio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer {
+            background-color: #3498db;
+            color: white;
+            padding: 20px 0;
+        }
+
+        .footer .social-links a {
+            color: white;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .footer .social-links a:hover {
+            color: #2ecc71;
+        }
+
         @media (max-width: 768px) {
             .service-card,
             .portfolio-card {
                 margin-bottom: 30px; /* Add some space between cards */
             }
+
             .col-md-6 {
                 flex: 0 0 50%; /* Two elements per row */
                 max-width: 50%;
@@ -54,7 +120,7 @@
                 <span class="up">HI!</span>
                 <span class="down">I am Achal Jaiswal </span>
             </h1>
-            <p class="header-subtitle">Android Developer|Freelancer</p>
+            <p class="header-subtitle">Android Developer | Freelancer</p>
             <form action="#portfolio">
                 <button class="btn btn-primary">Visit My Works</button>
             </form>
@@ -64,7 +130,7 @@
     <!-- about section -->
     <section class="section pt-0" id="about">
         <div class="container text-center">
-            <div class="about">
+            <div class="about wow slideInUp" data-wow-delay="0.1s">
                 <div class="about-img-holder">
                     <img src="assets/imgs/profile-pic (1).png" class="about-img" alt="Profile Picture">
                 </div>
@@ -84,11 +150,11 @@
     <!-- service section -->
     <section class="section" id="service">
         <div class="container text-center">
-            <p class="section-subtitle">What I Do ?</p>
-            <h6 class="section-title mb-6">My Skills</h6>
+            <p class="section-subtitle wow slideInUp" data-wow-delay="0.1s">What I Do ?</p>
+            <h6 class="section-title mb-6 wow slideInUp" data-wow-delay="0.2s">My Skills</h6>
             <div class="row">
                 <div class="col-md-6 col-lg-3">
-                    <div class="service-card wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-card wow slideInUp" data-wow-delay="0.3s">
                         <div class="body">
                             <img src="assets/imgs/education.svg" class="icon">
                             <h6 class="title">Android Development</h6>
@@ -97,7 +163,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
-                    <div class="service-card wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="service-card wow slideInUp" data-wow-delay="0.4s">
                         <div class="body">
                             <img src="assets/imgs/toolbox.svg" class="icon">
                             <h6 class="title">UI/UX Design</h6>
@@ -106,7 +172,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
-                    <div class="service-card wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-card wow slideInUp" data-wow-delay="0.5s">
                         <div class="body">
                             <img src="assets/imgs/analytics.svg" class="icon">
                             <h6 class="title">Problem-Solving</h6>
@@ -115,7 +181,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
-                    <div class="service-card wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="service-card wow slideInUp" data-wow-delay="0.6s">
                         <div class="body">
                             <img src="assets/imgs/responsive.svg" class="icon">
                             <h6 class="title">Teamwork and Collaboration</h6>
@@ -130,10 +196,10 @@
     <!-- portfolio section -->
     <section class="section" id="portfolio">
         <div class="container text-center">
-            <p class="section-subtitle">What I Did ?</p>
-            <h6 class="section-title mb-6">Projects</h6>
+            <p class="section-subtitle wow slideInUp" data-wow-delay="0.1s">What I Did ?</p>
+            <h6 class="section-title mb-6 wow slideInUp" data-wow-delay="0.2s">Projects</h6>
             <div class="row">
-                <div class="col-md-6 col-lg-4 mb-4 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-md-6 col-lg-4 mb-4 wow slideInUp" data-wow-delay="0.3s">
                     <a href="https://github.com/Achaljs/DevConnect" class="portfolio-card">
                         <img src="assets/imgs/devC.png" class="portfolio-card-img img-fluid rounded shadow-lg">
                         <span class="portfolio-card-overlay">
@@ -144,7 +210,7 @@
                         </span>
                     </a>
                 </div>
-                <div class="col-md-6 col-lg-4 mb-4 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="col-md-6 col-lg-4 mb-4 wow slideInUp" data-wow-delay="0.4s">
                     <a href="https://github.com/Achaljs/AskMe" class="portfolio-card">
                         <img class="portfolio-card-img img-fluid rounded shadow-lg" src="assets/imgs/chat.png">
                         <span class="portfolio-card-overlay">
@@ -155,7 +221,7 @@
                         </span>
                     </a>
                 </div>
-                <div class="col-md-6 col-lg-4 mb-4 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="col-md-6 col-lg-4 mb-4 wow slideInUp" data-wow-delay="0.5s">
                     <a href="https://github.com/Achaljs/MyWallpapers" class="portfolio-card">
                         <img class="portfolio-card-img img-fluid rounded shadow-lg" src="assets/imgs/wallpaper.png">
                         <span class="portfolio-card-overlay">
@@ -166,7 +232,7 @@
                         </span>
                     </a>
                 </div>
-                <div class="col-md-6 col-lg-4 mb-4 wow fadeInUp" data-wow-delay="0.4s">
+                <div class="col-md-6 col-lg-4 mb-4 wow slideInUp" data-wow-delay="0.6s">
                     <a href="https://github.com/Achaljs/PujanMart" class="portfolio-card">
                         <img class="portfolio-card-img img-fluid rounded shadow-lg" src="assets/imgs/pujanmart.png">
                         <span class="portfolio-card-overlay">
@@ -190,10 +256,10 @@
     <!-- pricing section -->
     <section class="section" id="pricing">
         <div class="container text-center">
-            <p class="section-subtitle">How Much I Charge ?</p>
-            <h6 class="section-title mb-6">My Background</h6>
+            <p class="section-subtitle wow slideInUp" data-wow-delay="0.1s">How Much I Charge ?</p>
+            <h6 class="section-title mb-6 wow slideInUp" data-wow-delay="0.2s">My Background</h6>
             <div class="pricing-wrapper">
-                <div class="pricing-card">
+                <div class="pricing-card wow slideInUp" data-wow-delay="0.1s">
                     <div class="pricing-card-header">
                         <img class="pricing-card-icon" src="assets/imgs/education.svg">
                     </div>
@@ -206,7 +272,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="pricing-card">
+                <div class="pricing-card wow slideInUp" data-wow-delay="0.2s">
                     <div class="pricing-card-header">
                         <img class="pricing-card-icon" src="assets/imgs/shipped.svg">
                     </div>
@@ -218,7 +284,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="pricing-card">
+                <div class="pricing-card wow slideInUp" data-wow-delay="0.3s">
                     <div class="pricing-card-header">
                         <img class="pricing-card-icon" src="assets/imgs/shipped.svg">
                     </div>
@@ -252,10 +318,10 @@
     <!-- testimonial section -->
     <section class="section" id="testmonial">
         <div class="container text-center">
-            <p class="section-subtitle">What Client Think About Me ?</p>
-            <h6 class="section-title mb-6">Testmonial</h6>
+            <p class="section-subtitle wow slideInUp" data-wow-delay="0.1s">What Client Think About Me ?</p>
+            <h6 class="section-title mb-6 wow slideInUp" data-wow-delay="0.2s">Testmonial</h6>
             <div class="row">
-                <div class="col-md-10">
+                <div class="col-md-10 wow slideInUp" data-wow-delay="0.3s">
                     <div class="testimonial-card">
                         <div class="testimonial-card-img-holder">
                             <img src="assets/imgs/avatar.jpeg" class="testimonial-card-img" alt="Client Testimonial">
@@ -273,9 +339,9 @@
     <!-- blog section -->
     <section class="section" id="blog">
         <div class="container text-center">
-            <p class="section-subtitle">Recent Posts?</p>
-            <h6 class="section-title mb-6">Reports</h6>
-            <div class="blog-card">
+            <p class="section-subtitle wow slideInUp" data-wow-delay="0.1s">Recent Posts?</p>
+            <h6 class="section-title mb-6 wow slideInUp" data-wow-delay="0.2s">Reports</h6>
+            <div class="blog-card wow slideInUp" data-wow-delay="0.3s">
                 <div class="blog-card-header">
                     <img src="assets/imgs/GIS.jpg" class="blog-card-img" alt="Blog Post">
                 </div>
@@ -291,7 +357,7 @@
                 </div>
             </div><!-- end of blog wrapper -->
 
-            <div class="blog-card">
+            <div class="blog-card wow slideInUp" data-wow-delay="0.4s">
                 <div class="blog-card-header">
                     <img src="assets/imgs/img-2.jpg" class="blog-card-img" alt="Blog Post">
                 </div>
@@ -311,8 +377,8 @@
     <!-- contact section -->
     <section class="section" id="contact">
         <div class="container text-center">
-            <p class="section-subtitle">How can you communicate?</p>
-            <h6 class="section-title mb-5">Contact Me</h6>
+            <p class="section-subtitle wow slideInUp" data-wow-delay="0.1s">How can you communicate?</p>
+            <h6 class="section-title mb-5 wow slideInUp" data-wow-delay="0.2s">Contact Me</h6>
             <form action="mailto:achaljaiswal8318@gmail.com" class="contact-form col-md-10 col-lg-8 m-auto">
                 <div class="form-row">
                     <div class="form-group col-sm-12 mt-3">
