@@ -12,8 +12,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/animate.min.css">
     <style>
         @media (max-width: 768px) {
-            .service-card {
+            .service-card,
+            .portfolio-card {
                 margin-bottom: 30px; /* Add some space between cards */
+            }
+            .col-md-6 {
+                flex: 0 0 50%; /* Two elements per row */
+                max-width: 50%;
             }
         }
     </style>
@@ -337,6 +342,20 @@
     <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
     <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
     <script src="assets/js/meyawo.js"></script>
+
+    <!-- Smooth Scrolling Script -->
+    <script>
+        $(document).ready(function() {
+            // Smooth scrolling for menu items
+            $('.nav-link').on('click', function(event) {
+                var target = $(this).attr('href');
+                $('html, body').animate({
+                    scrollTop: $(target).offset().top
+                }, 800);
+                event.preventDefault();
+            });
+        });
+    </script>
 
 </body>
 
