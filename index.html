@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Visit to my personal website.">
     <meta name="author" content="Achal Jaiswal">
-    <title>AchalJaiswal</title>
+    <title>Achal Jaiswal</title>
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
     <link rel="stylesheet" href="assets/css/meyawo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/animate.min.css">
@@ -23,14 +23,55 @@
             }
         }
 
-        .dropdown-content {
-            background-color: #f9f9f9;
-            border: 1px solid #ccc;
-            padding: 15px;
-            margin-top: 10px;
+        /* Modal Styles */
+        .modal {
             display: none; /* Hidden by default */
-            position: relative;
-            z-index: 1;
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+            animation: slideDown 0.5s forwards; /* Animation */
+        }
+
+        .modal-content {
+            background-color: #f9f9f9;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+            max-width: 600px; /* Max width for larger screens */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes slideDown {
+            from {
+                top: -100px; /* Start above the screen */
+                opacity: 0; /* Start invisible */
+            }
+
+            to {
+                top: 0; /* End at the top */
+                opacity: 1; /* End visible */
+            }
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
         }
 
         .dropdown-inner {
@@ -79,65 +120,42 @@
                 <span class="up">HI!</span>
                 <span class="down">I am Achal Jaiswal </span>
             </h1>
-            <p class="header-subtitle">Android Developer|Freelancer</p>
-            <a href="#portfolio" class="btn btn-primary">Visit My Works</a>
+            <p class="header-subtitle">Android Developer | Freelancer</p>
+            <button class="btn btn-primary" onclick="openModal()">Visit My Works</button>
         </div>
     </header><!-- end of page header -->
+
+    <!-- About Section -->
+    <section class="section pt-0" id="about">
+        <div class="container text-center">
+            <div class="about">
+                <div class="about-img-holder">
+                    <img src="assets/imgs/profile-pic (1).png" class="about-img" alt="Profile Picture">
+                </div>
+                <div class="about-caption">
+                    <p class="section-subtitle">Who Am I?</p>
+                    <h2 class="section-title mb-3">About Me</h2>
+                    <p>
+                        Ever since I laid my hands on my first Android device, I've been captivated by the endless possibilities of the platform. My journey from avid user to skilled developer has been driven by an unwavering passion for creating exceptional Android experiences.
+                        <br><br>I'm a B.Tech. CSE student at Shri Ramswaroop Memorial University with a passion for building innovative Android apps. Through a number of projects (details in my resume), I've honed my skills in Java, Kotlin, Object-Oriented Programming (OOP) concepts, Android SDKs, UI/UX, Firebase, and REST APIs.
+                    </p>
+                    <a href="https://drive.google.com/file/d/1AUZ_KnmKSWnLeM13oCt7rhxFMWzi-FjZ/view?usp=sharing" class="btn-rounded btn btn-outline-primary mt-4">Download CV</a>
+                </div>
+            </div>
+        </div>
+    </section> <!-- end of about section -->
 
     <!-- Portfolio Section -->
     <section class="section" id="portfolio">
         <div class="container text-center">
-            <p class="section-subtitle">What I Did ?</p>
+            <p class="section-subtitle">What I Did?</p>
             <h6 class="section-title mb-6">Projects</h6>
             <div class="row">
                 <div class="col-md-6 col-lg-4 mb-4 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="portfolio-card">
                         <h4>PujanMart</h4>
                         <p class="font-weight-normal">E-Commerce Android App for Pooja Services</p>
-                        <button class="btn btn-primary" onclick="toggleDropdown('pujanmartDropdown')">Details</button>
-                        <div id="pujanmartDropdown" class="dropdown-content" style="display: none;">
-                            <h5>Project Overview</h5>
-                            <div class="dropdown-inner">
-                                <div class="dropdown-left">
-                                    <h6>Screenshots & Video</h6>
-                                    <img id="projectImage" src="link-to-your-screenshot1" alt="PujanMart Screenshot" style="width: 100%; max-width: 300px;">
-                                    <video controls style="width: 100%; max-width: 300px; margin-top: 10px;">
-                                        <source src="link-to-your-video.mp4" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                    <div class="image-change">
-                                        <button onclick="changeImage('link-to-your-screenshot2')">Change Image</button>
-                                    </div>
-                                </div>
-                                <div class="dropdown-right">
-                                    <h6>Details</h6>
-                                    <p><strong>Overview:</strong> PujanMart is an e-commerce Android application designed to facilitate the online booking of pooja services and the purchase of pooja items.</p>
-                                    <h6>Features:</h6>
-                                    <ul>
-                                        <li>User Registration & Login</li>
-                                        <li>Browse Pooja Services</li>
-                                        <li>Book Pooja Online</li>
-                                        <li>Purchase Pooja Items</li>
-                                        <li>Shopping Cart</li>
-                                        <li>Payment Integration</li>
-                                        <li>Order History</li>
-                                        <li>Push Notifications</li>
-                                    </ul>
-                                    <h6>Technologies Used:</h6>
-                                    <p>Java, Kotlin, Firebase, Payment Gateway Integration, Material Design</p>
-                                    <h6>My Contribution:</h6>
-                                    <ul>
-                                        <li>Developed the complete frontend architecture using Java & XML following the MVVM pattern.</li>
-                                        <li>Integrated REST APIs for product listings, pooja bookings, and user management.</li>
-                                        <li>Built features like Search, Cart, Payment Gateway, and Personalized User Panel.</li>
-                                        <li>Collaborated with the backend team to bind C# .NET APIs with the Android app.</li>
-                                    </ul>
-                                    <h6>Links:</h6>
-                                    <p><a href="https://github.com/Achaljs/PujanMart" target="_blank">GitHub Repository</a></p>
-                                    <p><a href="https://play.google.com/store/apps/details?id=com.example.pujanmart" target="_blank">Google Play Store</a></p>
-                                </div>
-                            </div>
-                        </div>
+                        <button class="btn btn-primary" onclick="openModal()">Details</button>
                     </div>
                 </div>
                 <!-- Add more projects here -->
@@ -145,19 +163,162 @@
         </div><!-- end of container -->
     </section>
 
+    <!-- Modal for Project Details -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h5>Project Overview</h5>
+            <div class="dropdown-inner">
+                <div class="dropdown-left">
+                    <h6>Screenshots & Video</h6>
+                    <img id="projectImage" src="link-to-your-screenshot1" alt="PujanMart Screenshot" style="width: 100%; max-width: 300px;">
+                    <video controls style="width: 100%; max-width: 300px; margin-top: 10px;">
+                        <source src="link-to-your-video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="image-change">
+                        <button onclick="changeImage('link-to-your-screenshot2')">Change Image</button>
+                    </div>
+                </div>
+                <div class="dropdown-right">
+                    <h6>Details</h6>
+                    <p><strong>Overview:</strong> PujanMart is an e-commerce Android application designed to facilitate the online booking of pooja services and the purchase of pooja items.</p>
+                    <h6>Features:</h6>
+                    <ul>
+                        <li>User Registration & Login</li>
+                        <li>Browse Pooja Services</li>
+                        <li>Book Pooja Online</li>
+                        <li>Purchase Pooja Items</li>
+                        <li>Shopping Cart</li>
+                        <li>Payment Integration</li>
+                        <li>Order History</li>
+                        <li>Push Notifications</li>
+                    </ul>
+                    <h6>Technologies Used:</h6>
+                    <p>Java, Kotlin, Firebase, Payment Gateway Integration, Material Design</p>
+                    <h6>My Contribution:</h6>
+                    <ul>
+                        <li>Developed the complete frontend architecture using Java & XML following the MVVM pattern.</li>
+                        <li>Integrated REST APIs for product listings, pooja bookings, and user management.</li>
+                        <li>Built features like Search, Cart, Payment Gateway, and Personalized User Panel.</li>
+                        <li>Collaborated with the backend team to bind C# .NET APIs with the Android app.</li>
+                    </ul>
+                    <h6>Links:</h6>
+                    <p><a href="https://github.com/Achaljs/PujanMart" target="_blank">GitHub Repository</a></p>
+                    <p><a href="https://play.google.com/store/apps/details?id=com.example.pujanmart" target="_blank">Google Play Store</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonial Section -->
+    <section class="section" id="testmonial">
+        <div class="container text-center">
+            <p class="section-subtitle">What Clients Think About Me?</p>
+            <h6 class="section-title mb-6">Testimonial</h6>
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="testimonial-card">
+                        <div class="testimonial-card-img-holder">
+                            <img src="assets/imgs/avatar.jpeg" class="testimonial-card-img" alt="Client Testimonial">
+                        </div>
+                        <div class="testimonial-card-body">
+                            <p class="testimonial-card-subtitle">Working with Achal has been a fantastic experience. He is responsive, collaborative, and always goes the extra mile to ensure our project's success. I highly recommend him to any business looking to build an Android app.</p>
+                            <h6 class="testimonial-card-title">Yash Verma, Founder of Impeal Corp.</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </section> <!-- end of testimonial section -->
+
+    <!-- Blog Section -->
+    <section class="section" id="blog">
+        <div class="container text-center">
+            <p class="section-subtitle">Recent Posts?</p>
+            <h6 class="section-title mb-6">Reports</h6>
+            <div class="blog-card">
+                <div class="blog-card-header">
+                    <img src="assets/imgs/GIS.jpg" class="blog-card-img" alt="Blog Post">
+                </div>
+                <div class="blog-card-body">
+                    <h5 class="blog-card-title">The Integration of GIS with Other Technologies</h5>
+                    <p class="blog-card-caption">
+                        <a href="#">By: Achal Jaiswal</a>
+                    </p>
+                    <p>GIS gives us the ability to gather, store, analyze, and visualize geographic data, enabling us to make well-informed decisions on anything from environmental preservation to urban planning.</p>
+                    <p><b>However, when GIS is combined with other state-of-the-art technologies, its full potential becomes accessible.</b></p>
+                    <p>Together, they form a potent coalition for spatial analysis that provides a more dynamic and all-encompassing view of our globe and its people.</p>
+                    <a href="https://1drv.ms/w/c/0d5aca949882bf01/EaM0ccg9YhRAnbsu4EkGy_QBA2yepu4TaXk9KWsgBtp4Fw" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
+                </div>
+            </div><!-- end of blog wrapper -->
+
+            <div class="blog-card">
+                <div class="blog-card-header">
+                    <img src="assets/imgs/img-2.jpg" class="blog-card-img" alt="Blog Post">
+                </div>
+                <div class="blog-card-body">
+                    <h5 class="blog-card-title">The Regulation of Social Media: A Case Study in Balancing Free Speech and Public Safety</h5>
+                    <p class="blog-card-caption">
+                        <a href="#">By: Achal Jaiswal</a>
+                    </p>
+                    <p>Undeniably, Social media has ended up a necessarily portion of our lives, encouraging association, communication, and data trade. Be that as it may, the unmonitored viewpoint of this stage has too uncovered the darker side of social media, where deception, abhor discourse, and control can breed. In this case think about, we dive into the complex point of social media direction, looking at the fragile adjust between shielding free discourse and guaranteeing open security.</p>
+                    <a href="https://1drv.ms/w/c/0d5aca949882bf01/EQMmPTv6ae5GrI11s8GrO3ABHvYryoS1rSUWtRvS_gnwPg" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
+                </div>
+            </div><!-- end of blog wrapper -->
+
+        </div><!-- end of container -->
+    </section><!-- end of blog section -->
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container text-center">
+            <p class="section-subtitle">How can you communicate?</p>
+            <h6 class="section-title mb-5">Contact Me</h6>
+            <form action="mailto:achaljaiswal8318@gmail.com" class="contact-form col-md-10 col-lg-8 m-auto">
+                <div class="form-row">
+                    <div class="form-group col-sm-12 mt-3">
+                        <input type="submit" value="Send Message" class="btn btn-outline-primary rounded">
+                    </div>
+                </div>
+            </form><!-- end of contact form -->
+        </div><!-- end of container -->
+    </section><!-- end of contact section -->
+
+    <!-- Footer -->
+    <div class="container">
+        <footer class="footer">
+            <div class="social-links text-right m-auto ml-sm-auto">
+                <a href="javascript:void(0)" class="link"><i class="ti-facebook"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-twitter-alt"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-google"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-pinterest-alt"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-instagram"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-rss"></i></a>
+            </div>
+        </footer>
+    </div> <!-- end of page footer -->
+
     <!-- Add this script at the bottom of your body -->
     <script>
-        function toggleDropdown(dropdownId) {
-            var dropdown = document.getElementById(dropdownId);
-            if (dropdown.style.display === "none" || dropdown.style.display === "") {
-                dropdown.style.display = "block";
-            } else {
-                dropdown.style.display = "none";
-            }
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
         }
 
         function changeImage(newImage) {
             document.getElementById("projectImage").src = newImage;
+        }
+
+        // Close the modal when clicking outside of it
+        window.onclick = function(event) {
+            var modal = document.getElementById("myModal");
+            if (event.target == modal) {
+                closeModal();
+            }
         }
     </script>
 
@@ -167,7 +328,7 @@
         new WOW().init();
     </script>
 
-    <!-- core  -->
+    <!-- Core  -->
     <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
     <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
     <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
