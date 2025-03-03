@@ -16,10 +16,35 @@
             .portfolio-card {
                 margin-bottom: 30px; /* Add some space between cards */
             }
+
             .col-md-6 {
                 flex: 0 0 50%; /* Two elements per row */
                 max-width: 50%;
             }
+        }
+
+        .dropdown-content {
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-top: 10px;
+            display: none; /* Hidden by default */
+            position: relative;
+            z-index: 1;
+        }
+
+        .dropdown-inner {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .dropdown-left,
+        .dropdown-right {
+            width: 48%; /* Adjust width as needed */
+        }
+
+        .image-change {
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -55,287 +80,92 @@
                 <span class="down">I am Achal Jaiswal </span>
             </h1>
             <p class="header-subtitle">Android Developer|Freelancer</p>
-            <form action="#portfolio">
-                <a href="#portfolio" class="btn btn-primary">Visit My Works</a>
-            </form>
+            <a href="#portfolio" class="btn btn-primary">Visit My Works</a>
         </div>
     </header><!-- end of page header -->
 
-    <!-- about section -->
-    <section class="section pt-0" id="about">
-        <div class="container text-center">
-            <div class="about">
-                <div class="about-img-holder">
-                    <img src="assets/imgs/profile-pic (1).png" class="about-img" alt="Profile Picture">
-                </div>
-                <div class="about-caption">
-                    <p class="section-subtitle">Who Am I ?</p>
-                    <h2 class="section-title mb-3">About Me</h2>
-                    <p>
-                        Ever since I laid my hands on my first Android device, I've been captivated by the endless possibilities of the platform. My journey from avid user to skilled developer has been driven by an unwavering passion for creating exceptional Android experiences.
-                        <br><br>I'm a B.Tech. CSE student at Shri Ramswaroop Memorial University with a passion for building innovative Android apps. Through a number of projects (details in my resume), I've honed my skills in Java, Kotlin, Oriented Programming (OOP) concepts, Android SDKs, UI/UX, Firebase, and Rest APIs.
-                    </p>
-                    <a href="https://drive.google.com/file/d/1AUZ_KnmKSWnLeM13oCt7rhxFMWzi-FjZ/view?usp=sharing" class="btn-rounded btn btn-outline-primary mt-4">Download CV</a>
-                </div>
-            </div>
-        </div>
-    </section> <!-- end of about section -->
-
-    <!-- service section -->
-    <section class="section" id="service">
-        <div class="container text-center">
-            <p class="section-subtitle">What I Do ?</p>
-            <h6 class="section-title mb-6">My Skills</h6>
-            <div class="row">
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-card wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="body">
-                            <img src="assets/imgs/education.svg" class="icon">
-                            <h6 class="title">Android Development</h6>
-                            <p class="subtitle">Expertise in building robust and user-friendly Android applications using Java, Kotlin, and the latest Android SDK tools.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-card wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="body">
-                            <img src="assets/imgs/toolbox.svg" class="icon">
-                            <h6 class="title">UI/UX Design</h6>
-                            <p class="subtitle">Creates visually appealing and intuitive user interfaces, focusing on accessibility and responsive design.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-card wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="body">
-                            <img src="assets/imgs/analytics.svg" class="icon">
-                            <h6 class="title">Problem-Solving</h6>
-                            <p class="subtitle">Adept at tackling complex technical challenges, breaking them down, and finding efficient, innovative solutions.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-card wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="body">
-                            <img src="assets/imgs/responsive.svg" class="icon">
-                            <h6 class="title">Teamwork and Collaboration</h6>
-                            <p class="subtitle">Able to work effectively with cross-functional teams to deliver high-quality projects.</p>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- end of row -->
-        </div>
-    </section><!-- end of service section -->
-
-    <!-- portfolio section -->
+    <!-- Portfolio Section -->
     <section class="section" id="portfolio">
         <div class="container text-center">
             <p class="section-subtitle">What I Did ?</p>
             <h6 class="section-title mb-6">Projects</h6>
             <div class="row">
                 <div class="col-md-6 col-lg-4 mb-4 wow fadeInUp" data-wow-delay="0.1s">
-                    <a href="https://github.com/Achaljs/DevConnect" class="portfolio-card">
-                        <img src="assets/imgs/devC.png" class="portfolio-card-img img-fluid rounded shadow-lg">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>DevConnect</h4>
-                                <p class="font-weight-normal">Android App</p>
-                            </span>
-                        </span>
-                    </a>
+                    <div class="portfolio-card">
+                        <h4>PujanMart</h4>
+                        <p class="font-weight-normal">E-Commerce Android App for Pooja Services</p>
+                        <button class="btn btn-primary" onclick="toggleDropdown('pujanmartDropdown')">Details</button>
+                        <div id="pujanmartDropdown" class="dropdown-content" style="display: none;">
+                            <h5>Project Overview</h5>
+                            <div class="dropdown-inner">
+                                <div class="dropdown-left">
+                                    <h6>Screenshots & Video</h6>
+                                    <img id="projectImage" src="link-to-your-screenshot1" alt="PujanMart Screenshot" style="width: 100%; max-width: 300px;">
+                                    <video controls style="width: 100%; max-width: 300px; margin-top: 10px;">
+                                        <source src="link-to-your-video.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <div class="image-change">
+                                        <button onclick="changeImage('link-to-your-screenshot2')">Change Image</button>
+                                    </div>
+                                </div>
+                                <div class="dropdown-right">
+                                    <h6>Details</h6>
+                                    <p><strong>Overview:</strong> PujanMart is an e-commerce Android application designed to facilitate the online booking of pooja services and the purchase of pooja items.</p>
+                                    <h6>Features:</h6>
+                                    <ul>
+                                        <li>User Registration & Login</li>
+                                        <li>Browse Pooja Services</li>
+                                        <li>Book Pooja Online</li>
+                                        <li>Purchase Pooja Items</li>
+                                        <li>Shopping Cart</li>
+                                        <li>Payment Integration</li>
+                                        <li>Order History</li>
+                                        <li>Push Notifications</li>
+                                    </ul>
+                                    <h6>Technologies Used:</h6>
+                                    <p>Java, Kotlin, Firebase, Payment Gateway Integration, Material Design</p>
+                                    <h6>My Contribution:</h6>
+                                    <ul>
+                                        <li>Developed the complete frontend architecture using Java & XML following the MVVM pattern.</li>
+                                        <li>Integrated REST APIs for product listings, pooja bookings, and user management.</li>
+                                        <li>Built features like Search, Cart, Payment Gateway, and Personalized User Panel.</li>
+                                        <li>Collaborated with the backend team to bind C# .NET APIs with the Android app.</li>
+                                    </ul>
+                                    <h6>Links:</h6>
+                                    <p><a href="https://github.com/Achaljs/PujanMart" target="_blank">GitHub Repository</a></p>
+                                    <p><a href="https://play.google.com/store/apps/details?id=com.example.pujanmart" target="_blank">Google Play Store</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6 col-lg-4 mb-4 wow fadeInUp" data-wow-delay="0.2s">
-                    <a href="https://github.com/Achaljs/AskMe" class="portfolio-card">
-                        <img class="portfolio-card-img img-fluid rounded shadow-lg" src="assets/imgs/chat.png">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>Ask Me</h4>
-                                <p class="font-weight-normal">Android App</p>
-                            </span>
-                        </span>
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4 wow fadeInUp" data-wow-delay="0.3s">
-                    <a href="https://github.com/Achaljs/MyWallpapers" class="portfolio-card">
-                        <img class="portfolio-card-img img-fluid rounded shadow-lg" src="assets/imgs/wallpaper.png">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>MyWallpapers</h4>
-                                <p class="font-weight-normal">Android App</p>
-                            </span>
-                        </span>
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4 wow fadeInUp" data-wow-delay="0.4s">
-                    <a href="https://github.com/Achaljs/PujanMart" class="portfolio-card">
-                        <img class="portfolio-card-img img-fluid rounded shadow-lg" src="assets/imgs/pujanmart.png">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>PujanMart</h4>
-                                <p class="font-weight-normal">Android App for Pooja Booking & Items</p>
-                            </span>
-                        </span>
-                    </a>
-                </div>
+                <!-- Add more projects here -->
             </div><!-- end of row -->
         </div><!-- end of container -->
     </section>
+
+    <!-- Add this script at the bottom of your body -->
+    <script>
+        function toggleDropdown(dropdownId) {
+            var dropdown = document.getElementById(dropdownId);
+            if (dropdown.style.display === "none" || dropdown.style.display === "") {
+                dropdown.style.display = "block";
+            } else {
+                dropdown.style.display = "none";
+            }
+        }
+
+        function changeImage(newImage) {
+            document.getElementById("projectImage").src = newImage;
+        }
+    </script>
 
     <!-- Add Wow.js for smooth animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script>
         new WOW().init();
     </script>
-
-    <!-- pricing section -->
-    <section class="section" id="pricing">
-        <div class="container text-center">
-            <p class="section-subtitle">How Much I Charge ?</p>
-            <h6 class="section-title mb-6">My Background</h6>
-            <div class="pricing-wrapper">
-                <div class="pricing-card">
-                    <div class="pricing-card-header">
-                        <img class="pricing-card-icon" src="assets/imgs/education.svg">
-                    </div>
-                    <div class="pricing-card-body">
-                        <h6 class="pricing-card-title">Education</h6>
-                        <div class="pricing-card-list">
-                            <p>B.Tech in Computer Science</p>
-                            <p>Shri Ramswaroop Memorial University</p>
-                            <p>2021 - 2025</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="pricing-card">
-                    <div class="pricing-card-header">
-                        <img class="pricing-card-icon" src="assets/imgs/shipped.svg">
-                    </div>
-                    <div class="pricing-card-body">
-                        <a href="#"><h6 class="pricing-card-title">Accenture North America</h6></a>
-                        <div class="pricing-card-list">
-                            <p>Completed a job simulation where I supported a client with a small development team overwhelmed by the growth of their code base.</p>
-                            <p>January 2024</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="pricing-card">
-                    <div class="pricing-card-header">
-                        <img class="pricing-card-icon" src="assets/imgs/shipped.svg">
-                    </div>
-                    <div class="pricing-card-body">
-                        <h6 class="pricing-card-title">Google Cloud Ready Facilitator</h6>
-                        <div class="pricing-card-list">
-                            <p>Participated in the Google Cloud Ready Facilitator Program 2022, gaining practical skills in deploying applications and leveraging Google Cloud Platform (GCP).</p>
-                            <p>Completed 60 Quests and Gained 30 Skill badges.</p>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- end of pricing wrapper -->
-        </div> <!-- end of container -->
-    </section><!-- end of pricing section -->
-
-    <!-- section -->
-    <section class="section-sm bg-primary">
-        <div class="container text-center text-sm-left">
-            <div class="row align-items-center">
-                <div class="col-sm offset-md-1 mb-4 mb-md-0">
-                    <h6 class="title text-light">Want to work with me?</h6>
-                    <p class="m-0 text-light">Always feel Free to Contact & Hire me</p>
-                </div>
-                <div class="col-sm offset-sm-2 offset-md-3">
-                    <a href="https://linkedin.com/in/achal-jaiswal-3922111a0/message/" class="btn btn-lg my-font btn-light rounded">Message Me on LinkedIn</a>
-                </div>
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </section> <!-- end of section -->
-
-    <!-- testimonial section -->
-    <section class="section" id="testmonial">
-        <div class="container text-center">
-            <p class="section-subtitle">What Client Think About Me ?</p>
-            <h6 class="section-title mb-6">Testmonial</h6>
-            <div class="row">
-                <div class="col-md-10">
-                    <div class="testimonial-card">
-                        <div class="testimonial-card-img-holder">
-                            <img src="assets/imgs/avatar.jpeg" class="testimonial-card-img" alt="Client Testimonial">
-                        </div>
-                        <div class="testimonial-card-body">
-                            <p class="testimonial-card-subtitle">Working with Achal has been a fantastic experience. He is responsive, collaborative, and always goes the extra mile to ensure our project's success. I highly recommend him to any business looking to build an Android app.</p>
-                            <h6 class="testimonial-card-title">Yash Verma, Founder of Impeal corp.</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- end of container -->
-    </section> <!-- end of testimonial section -->
-
-    <!-- blog section -->
-    <section class="section" id="blog">
-        <div class="container text-center">
-            <p class="section-subtitle">Recent Posts?</p>
-            <h6 class="section-title mb-6">Reports</h6>
-            <div class="blog-card">
-                <div class="blog-card-header">
-                    <img src="assets/imgs/GIS.jpg" class="blog-card-img" alt="Blog Post">
-                </div>
-                <div class="blog-card-body">
-                    <h5 class="blog-card-title">The Integration of GIS with Other Technologies</h5>
-                    <p class="blog-card-caption">
-                        <a href="#">By: Achal Jaiswal</a>
-                    </p>
-                    <p>GIS gives us the ability to gather, store, analyze, and visualize geographic data, enabling us to make well-informed decisions on anything from environmental preservation to urban planning.</p>
-                    <p><b>However, when GIS is combined with other state-of-the-art technologies, its full potential becomes accessible.</b></p>
-                    <p>Together, they form a potent coalition for spatial analysis that provides a more dynamic and all-encompassing view of our globe and its people.</p>
-                    <a href="https://1drv.ms/w/c/0d5aca949882bf01/EaM0ccg9YhRAnbsu4EkGy_QBA2yepu4TaXk9KWsgBtp4Fw" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
-                </div>
-            </div><!-- end of blog wrapper -->
-
-            <div class="blog-card">
-                <div class="blog-card-header">
-                    <img src="assets/imgs/img-2.jpg" class="blog-card-img" alt="Blog Post">
-                </div>
-                <div class="blog-card-body">
-                    <h5 class="blog-card-title">The Regulation of Social Media: A Case Study in Balancing Free Speech and Public Safety</h5>
-                    <p class="blog-card-caption">
-                        <a href="#">By: Achal Jaiswal</a>
-                    </p>
-                    <p>Undeniably, Social media has ended up a necessarily portion of our lives, encouraging association, communication, and data trade. Be that as it may, the unmonitored viewpoint of this stage has too uncovered the darker side of social media, where deception, abhor discourse, and control can breed. In this case think about, we dive into the complex point of social media direction, looking at the fragile adjust between shielding free discourse and guaranteeing open security.</p>
-                    <a href="https://1drv.ms/w/c/0d5aca949882bf01/EQMmPTv6ae5GrI11s8GrO3ABHvYryoS1rSUWtRvS_gnwPg" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
-                </div>
-            </div><!-- end of blog wrapper -->
-
-        </div><!-- end of container -->
-    </section><!-- end of blog section -->
-
-    <!-- contact section -->
-    <section class="section" id="contact">
-        <div class="container text-center">
-            <p class="section-subtitle">How can you communicate?</p>
-            <h6 class="section-title mb-5">Contact Me</h6>
-            <form action="mailto:achaljaiswal8318@gmail.com" class="contact-form col-md-10 col-lg-8 m-auto">
-                <div class="form-row">
-                    <div class="form-group col-sm-12 mt-3">
-                        <input type="submit" value="Send Message" class="btn btn-outline-primary rounded">
-                    </div>
-                </div>
-            </form><!-- end of contact form -->
-        </div><!-- end of container -->
-    </section><!-- end of contact section -->
-
-    <!-- footer -->
-    <div class="container">
-        <footer class="footer">
-            <div class="social-links text-right m-auto ml-sm-auto">
-                <a href="javascript:void(0)" class="link"><i class="ti-facebook"></i></a>
-                <a href="javascript:void(0)" class="link"><i class="ti-twitter-alt"></i></a>
-                <a href="javascript:void(0)" class="link"><i class="ti-google"></i></a>
-                <a href="javascript:void(0)" class="link"><i class="ti-pinterest-alt"></i></a>
-                <a href="javascript:void(0)" class="link"><i class="ti-instagram"></i></a>
-                <a href="javascript:void(0)" class="link"><i class="ti-rss"></i></a>
-            </div>
-        </footer>
-    </div> <!-- end of page footer -->
 
     <!-- core  -->
     <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
@@ -347,12 +177,14 @@
     <script>
         $(document).ready(function() {
             // Smooth scrolling for menu items
-            $('.nav-link').on('click', function(event) {
+            $('.nav-link, .btn-primary').on('click', function(event) {
                 var target = $(this).attr('href');
-                $('html, body').animate({
-                    scrollTop: $(target).offset().top
-                }, 800);
-                event.preventDefault();
+                if (target) {
+                    $('html, body').animate({
+                        scrollTop: $(target).offset().top
+                    }, 800);
+                    event.preventDefault();
+                }
             });
         });
     </script>
